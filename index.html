@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Document</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <!-- <div class="popup" id="newBoardPopUp">
+        <form action="" id="popupform">
+            <p id="popuptitle"></p>
+            <input class="popupinput" type="text" placeholder="task" placeholder="10" required>
+            <button class="btn" type="submit" id="createbtn">Create!</button>
+        </form>
+    </div>  -->
+    <!-- <div class="popup" id="newTaskPopUp">
+        <form action="" id="newtaskform">
+            <p>New Task</p>
+            <label>Title</label>
+            <input class="popupinput" type="text"  placeholder="e.g. Take coffe break" placeholder="10" id="taskTitle" required>
+            <label>Description</label>
+            
+            <textarea style="resize:none" class="popupinput" placeholder="E.g. It's always good to take break. This 15 minute break will recharge the batteries a little." id="taskdes"  required></textarea>
+            <label for="subtasks">SubTasks</label>
+            <div id="subtasks">
+                <label for="subtask1">
+                    <input id="subtask1" class="popupinput" type="text" placeholder="e.g. Make coffee">
+                    <button type="button" onclick="closeSubTask(event)">X</button>
+                </label>
+                <label for="subtask2">
+                    <input id="subtask2" class="popupinput" type="text" placeholder="e.g. Make coffee">
+                    <button type="button" onclick="closeSubTask(event)">X</button>
+                </label>
+            <button type="button" id="addSubTasks">+ Add New Subtasks</button>
+            </div>
+            <select id="selectcol">
+            </select>
+            <button class="btn" type="submit" id="createbtn">Create!</button>
+        </form>
+    </div>   -->
+    <main id="mainn">
+        <header>        
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" style="align-self: flex-end;
+            width: 85%;
+            background-color: #2c2c38;
+            color: white;
+            border-right: 3px solid #383844;
+            display: flex !important;
+            justify-content: space-between !important;
+            padding-right: 14px;">
+    
+            <h1 id="boardName">Platform Launch</h1>
+            <div><Button class="btn mainbtn" onclick="addTask()">+ New Task</Button></div>
+          </div>
+          </header>
+          <aside>
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 15%;
+            height: 100vh;
+            align-self: flex-start;
+            position: absolute;
+            top: 0;
+            background-color: inherit !important;   ">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                  <span class="fs-4">Taskello</span>
+                </a>
+                <hr>
+                <p>All BOARDS (<span id="bdscount">0</span>)</p>
+                <ul class="nav nav-pills flex-column mb-auto" id="boards">
+  
+                        <li class="new" id="newboardbutton" onclick="newboard()">
+                        <i class="fa fa-columns" aria-hidden="true"></i>
+                       <span class="bordname"> +Create New Board</span>
+                      </li>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" class="rounded-circle me-2" width="32" height="32">
+                    <strong>mdo</strong>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </div>
+      
+          </aside>
+        <article>
+            <div class="parent">
+                <div class="title" style="display: flex; gap: 2px;"><p>TODO</p><span>(0)</span></div>
+                <div class="child" draggable="true">HHH</div>
+                <div class="child" draggable="true">HH</div>
+                <div class="child" draggable="true">HFHFH</div>
+                <div class="child" draggable="true">FHFHFH</div>
+                <div class="child" draggable="true">HHH</div>
+                <div class="child" draggable="true">HH</div>
+                <div class="child" draggable="true">HFHFH</div>
+                <div class="child" draggable="true">FHFHFH</div>
+                <div class="child" draggable="true">HHH</div>
+                <div class="child" draggable="true">HH</div>
+                <div class="child" draggable="true">HFHFH</div>
+                <div class="child" draggable="true">FHFHFH</div>
+                <div class="child" draggable="true">HHH</div>
+                <div class="child" draggable="true">HH</div>
+                <div class="child" draggable="true">HFHFH</div>
+                <div class="child" draggable="true">FHFHFH</div>
+                <div class="newtask">+Add new task</div>
+            </div>
+            <div class="parent">
+                <div class="title" style="display: flex; gap: 2px;"><p>TODO</p><span>(0)</span></div>
+                <div class="child" draggable="true">HHH</div>
+            </div>
+            <div class="parent">
+                <div class="title" style="display: flex; gap: 2px;"><p>TODO</p><span>(0)</span></div>
+                <div class="child" draggable="true">HHH</div>
+            </div>
+            <div class="newcol" onclick="newCol()">
+                <p>+ New Column</p>
+            </div>
+
+        </article>
+    
+    </main>
+    <!-- <div class="popup">
+        <form >
+            <p>Create New Board</p>
+            <input type="text" maxlength="10" placeholder="Board name">
+            <button class="btn" type="submit">Create</button>
+        </form>
+    </div> -->
+    <script>
+        // let parents = Array.from(document.getElementsByClassName("parent"));
+        // let childs = Array.from(document.getElementsByClassName("child"));
+        // childs.forEach(function(ce){
+        //    ce.ondragstart = function(cee){
+        //     console.log(cee)
+        //    parents.forEach(function(pe){
+        //    pe.ondragover = function(oee){
+        //        oee.preventDefault()
+        //    } 
+        //    pe.ondrop = function(ee){
+        //        ee.preventDefault()
+        //        if(ee.target == cee.target ){
+       
+        //        }else if (ee.target.classList.contains("child")){
+        //            if(cee.target.offsetTop < ee.target.offsetTop){
+        //                ee.target.parentElement.insertBefore(cee.target,ee.target.nextSibling)
+       
+        //            }else{
+        //                ee.target.parentElement.insertBefore(cee.target,ee.target)
+       
+        //            }
+        //        }else{
+        //           ee.target.append(cee.target);
+       
+        //        }
+        //    } 
+        // })
+       
+        //    } 
+       
+        // })
+       
+       
+       
+       </script>
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
